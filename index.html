@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dips</title>
+    <!-- Link to Google Fonts Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100;400;700&display=swap">
+    <style>
+        /* Basic reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(Flood.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        .avater{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: rgb(206, 240, 114);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* Initial style for the navbar */
+        #navbar {
+            display: none; /* Hide the navbar by default */
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 60px;
+            border-radius: 5px;
+            gap: 20px;
+            /* Center items vertically */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style for the menu button */
+        .menu {
+            font-size: 40px; /* Adjust button font size */
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+
+        .material-symbols-outlined {
+            font-size: 50px;
+        }
+
+        #navbar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        #navbar a:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="avater">
+        <span class="material-symbols-outlined">
+            account_circle
+            </span>
+    </div>
+    <nav>
+        <button id="btn" class="menu" type="button">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div id="navbar">
+            <a href="#"><span class="material-symbols-outlined">warning</span></a>
+            <a href="#"><span class="material-symbols-outlined">wifi_calling_bar_1</span></a>
+            <a href="#"><span class="material-symbols-outlined">person_pin_circle</span></a>
+            <a href="#"><span class="material-symbols-outlined">cycle</span></a>
+            <a href="#"><span class="material-symbols-outlined">volunteer_activism</span></a>
+        </div>
+    </nav>
+    <script>
+        let btn = document.getElementById('btn');
+        let nav = document.getElementById('navbar');
+        nav.style.display = 'none';
+        btn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            if (nav.style.display === 'block') {
+                // If the navbar is visible, hide it
+                nav.style.display = 'none';
+                btn.querySelector('span').textContent = 'menu';
+            } else {
+                nav.style.display = 'block';
+                btn.querySelector('span').textContent = 'close';
+            }
+        }
+    </script>
+</body>
+</html>
